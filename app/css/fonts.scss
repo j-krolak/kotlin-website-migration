@@ -1,0 +1,31 @@
+@import 'config/_font';
+
+// Sans Serif
+@import url('//fonts.googleapis.com/css?family=Open+Sans:300,300italic,400italic,700italic,400,700');
+
+// Mono
+@import url('//fonts.googleapis.com/css?family=Droid+Sans+Mono');
+
+// Serif
+@font-face {
+  font-family: 'GraublauSans Bold';
+  src: url('/app/assets/fonts/GraublauSans-Bold-webfont.woff');
+}
+@font-face {
+  font-family: 'GraublauSlab Regular';
+  src: url('/app/assets/fonts/GraublauSlab-Regular-webfont.woff');
+}
+@font-face {
+  font-family: 'GraublauSlab Semibold';
+  src: url('/app/assets/fonts/GraublauSlab-Semibold.woff');
+}
+
+@import 'fonts/jetbrains-mono';
+
+body {
+  font-family: $font-family-sans-serif;
+}
+code,
+pre {
+  font-family: $font-family-mono;
+}
