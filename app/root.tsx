@@ -30,7 +30,8 @@ export const meta: Route.MetaFunction = () => {
     'Kotlin is a cross-platform, statically typed, general-purpose programming language with type inference.';
 
   return [
-    { title: defaultTitle, description: defaultDescription },
+    { title: defaultTitle },
+    { name: 'description', content: defaultDescription },
     { charSet: 'utf-8' },
     { name: 'viewport', content: 'width=device-width, initial-scale=1' },
     { httpEquiv: 'X-UA-Compatible', content: 'IE=edge,chrome=1' },

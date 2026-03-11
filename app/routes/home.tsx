@@ -15,12 +15,29 @@ import Header from '~/components/layout/header';
 import Footer from '~/components/layout/footer';
 
 export const meta: Route.MetaFunction = () => {
-  const title = 'Kotlin Programming Language';
   const baseUrl = 'https://kotlinlang.org';
+  const title = 'Kotlin Programming Language';
+  const description =
+    'Kotlin is a cross-platform, statically typed, general-purpose programming language with type inference.';
 
   return [
-    { title },
+    { title: title },
+    { name: 'description', content: description },
+    { charSet: 'utf-8' },
+    { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+    { httpEquiv: 'X-UA-Compatible', content: 'IE=edge,chrome=1' },
 
+    {
+      property: 'og:image',
+      content: `${baseUrl}/images/open-graph/general.png`,
+    },
+    { property: 'og:description', content: description },
+    { property: 'og:site_name', content: 'Kotlin Programming Language' },
+
+    {
+      name: 'twitter:image:src',
+      content: `${baseUrl}/images/twitter/general.png`,
+    },
     { property: 'og:title', content: title },
     { property: 'og:type', content: 'website' },
     { property: 'og:url', content: baseUrl },
