@@ -7,10 +7,11 @@ const GlobalHeader = lazy(
 );
 import releases from 'data/releases';
 import navigation from 'data/nav';
+import { useLocation } from 'react-router';
 
 const HeaderPlaceholder = () => (
   <nav className="header-placeholder">
-    {/* Render a hidden navigation list so crawlers can index header links while the real header is lazy-loaded.
+    {/* Render a hidden navigation list so crawlers can home header links while the real header is lazy-loaded.
         The list is visually hidden to avoid affecting layout or UX. */}
     <ul style={{ display: 'none' }}>
       {navigation.main.content.map((item) => (
@@ -29,19 +30,22 @@ type HeaderProps = {
 
 const Header: React.FC<HeaderProps> = ({ dropdownTheme, hasSearch }) => {
   const [isMounted, setIsMounted] = React.useState(false);
+  const location = useLocation();
   React.useEffect(() => {
     setIsMounted(true);
   }, []);
+
   if (!isMounted) {
     return <HeaderPlaceholder />;
   }
+
   return (
     <Suspense fallback={<HeaderPlaceholder />}>
       <GlobalHeader
         productWebUrl={releases.latest.url}
         hasSearch={hasSearch ?? false}
         dropdownTheme={dropdownTheme ?? 'light'}
-        currentUrl={window.location.pathname}
+        currentUrl={location.pathname}
       />
     </Suspense>
   );

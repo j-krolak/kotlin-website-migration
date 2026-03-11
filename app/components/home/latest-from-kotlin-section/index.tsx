@@ -5,8 +5,8 @@ import cn from 'classnames';
 
 import { Container, Section } from '../../layout';
 
-import bannerImg from '../../../../public/images/index/banners/kotlin-1.6.20.png';
-import bannerMobileImg from '../../../../public/images/index/banners/kotlin-1.6.20-mobile.png';
+import bannerImg from '~/assets/home/banners/kotlin-1.6.20.png';
+import bannerMobileImg from '~/assets/home/banners/kotlin-1.6.20-mobile.png';
 
 import { newsData } from './data';
 

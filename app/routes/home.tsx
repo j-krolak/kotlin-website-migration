@@ -1,10 +1,5 @@
 import '@rescui/typography/lib/font-jb-sans-auto.css';
 
-import hljs from 'highlight.js/lib/core';
-import kotlin from 'highlight.js/lib/languages/kotlin';
-import 'highlight.js/styles/github.css';
-hljs.registerLanguage('kotlin', kotlin);
-
 import { ThemeProvider } from '@rescui/ui-contexts';
 
 import type { Route } from './+types/home';
@@ -15,7 +10,7 @@ import { UsageSection } from '~/components/home/usage-section';
 import { StartSection } from '~/components/home/start-section';
 
 import '~/components/home/index.scss';
-import '~/css/grid.scss';
+import '~/styles/grid.scss';
 import Header from '~/components/layout/header';
 import Footer from '~/components/layout/footer';
 

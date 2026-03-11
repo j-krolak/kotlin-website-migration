@@ -5,6 +5,7 @@ import { cardCn } from '@rescui/card';
 import cn from 'classnames';
 
 import { Container, Section } from '../../layout';
+import jetbrainsLogo from '~/assets/jetbrains-logo.svg';
 
 import { cardsData } from './data';
 
@@ -39,7 +40,7 @@ export function HeaderSection() {
             </div>
 
             <div className="header-section__contributors">
-              <img src="/images/jetbrains-logo.svg" alt=""></img>
+              <img src={jetbrainsLogo} alt=""></img>
               <p className={textCn('rs-text-2')}>
                 Developed by{' '}
                 <a

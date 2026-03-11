@@ -8,7 +8,7 @@ import {
 } from 'react-router';
 
 import type { Route } from './+types/root';
-import './css/styles-v2.scss';
+import '~/styles/styles-v2.scss';
 
 export const links: Route.LinksFunction = () => [
   { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
@@ -25,10 +25,12 @@ export const links: Route.LinksFunction = () => [
 
 export const meta: Route.MetaFunction = () => {
   const baseUrl = 'https://kotlinlang.org';
+  const defaultTitle = 'Kotlin';
   const defaultDescription =
     'Kotlin is a cross-platform, statically typed, general-purpose programming language with type inference.';
 
   return [
+    { title: defaultTitle, description: defaultDescription },
     { charSet: 'utf-8' },
     { name: 'viewport', content: 'width=device-width, initial-scale=1' },
     { httpEquiv: 'X-UA-Compatible', content: 'IE=edge,chrome=1' },
