@@ -10,11 +10,12 @@ import jetbrainsLogo from '~/assets/jetbrains-logo.svg';
 import { cardsData } from './data';
 
 import './index.scss';
+import { useIsMobile } from '~/hooks/useIsMobile';
 
 export function HeaderSection() {
   const textCn = useTextStyles();
 
-  const isMobile = false; //window.innerWidth < 768;
+  const { isMobile } = useIsMobile();
   const visibleCards = isMobile ? cardsData.slice(0, 2) : cardsData;
 
   return (
