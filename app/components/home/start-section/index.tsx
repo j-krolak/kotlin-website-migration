@@ -1,4 +1,3 @@
-import { useEffect, useState } from 'react';
 import Button from '@rescui/button';
 import { useTextStyles } from '@rescui/typography';
 import { ThemeProvider } from '@rescui/ui-contexts';

@@ -1,23 +1,18 @@
-import js from '@eslint/js';
-import reactPlugin from 'eslint-plugin-react';
-import hooksPlugin from 'eslint-plugin-react-hooks';
-import prettierConfig from 'eslint-config-prettier';
-import globals from 'globals';
-import { fixupPluginRules } from '@eslint/compat';
 import tseslint from 'typescript-eslint';
+import react from 'eslint-plugin-react';
+import reactHooks from 'eslint-plugin-react-hooks';
+import prettier from 'eslint-config-prettier';
+import globals from 'globals';
+import unusedImports from 'eslint-plugin-unused-imports';
 
 export default tseslint.config(
   {
-    ignores: ['.react-router/', 'build/', 'public/build/'],
+    ignores: ['build', 'public/build', '.react-router'],
   },
-  js.configs.recommended,
   ...tseslint.configs.recommended,
   {
-    files: ['**/*.{js,jsx,ts,tsx}'],
-    plugins: {
-      react: fixupPluginRules(reactPlugin),
-      'react-hooks': fixupPluginRules(hooksPlugin),
-    },
+    files: ['**/*.{ts,tsx,js,jsx}'],
+
     languageOptions: {
       parser: tseslint.parser,
       globals: {
@@ -28,18 +23,33 @@ export default tseslint.config(
         ecmaFeatures: { jsx: true },
       },
     },
-    rules: {
-      ...reactPlugin.configs.recommended.rules,
-      ...hooksPlugin.configs.recommended.rules,
-      'react/react-in-jsx-scope': 'off',
-      'no-undef': 'off', 
-      'no-empty-pattern': 'off',
-      '@typescript-eslint/no-explicit-any': 'warn',
-      '@typescript-eslint/no-unused-vars': ['warn', { argsIgnorePattern: "^_" }],
+
+    plugins: {
+      react,
+      'react-hooks': reactHooks,
+      'unused-imports': unusedImports,
     },
+
+    rules: {
+      ...react.configs.recommended.rules,
+      ...reactHooks.configs.recommended.rules,
+
+      'react/react-in-jsx-scope': 'off',
+
+      '@typescript-eslint/no-explicit-any': 'warn',
+      '@typescript-eslint/no-unused-vars': [
+        'warn',
+        { argsIgnorePattern: '^_' },
+      ],
+      'no-unused-vars': 'off',
+      '@typescript-eslint/no-unused-vars': 'off',
+      'unused-imports/no-unused-imports': 'error',
+    },
+
     settings: {
       react: { version: 'detect' },
     },
   },
-  prettierConfig,
+
+  prettier
 );
