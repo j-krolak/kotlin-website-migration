@@ -1,45 +1,38 @@
-# Welcome to React Router!
+# Kotlin Website - React Router 7 SSR Migration
 
-A modern, production-ready template for building full-stack React applications using React Router.
+A migration of the Kotlin programming language official website
+from the original Flask backend to modern React Router 7 with Server-Side Rendering.
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/remix-run/react-router-templates/tree/main/default)
+## Project Overview
 
-## Features
+This is a test assignment for JetBrains internship program. The project successfully
+migrates the Kotlin homepage to a modern full-stack React setup while maintaining
+visual accuracy and all interactive functionality.
 
-- 🚀 Server-side rendering
-- ⚡️ Hot Module Replacement (HMR)
-- 📦 Asset bundling and optimization
-- 🔄 Data loading and mutations
-- 🔒 TypeScript by default
-- 🎉 TailwindCSS for styling
-- 📖 [React Router docs](https://reactrouter.com/)
+## Key Features
 
-## Getting Started
+- ✅ **Server-Side Rendering (SSR)** - Page renders on server, fully functional after hydration
+- ✅ **React Router 7 Framework Mode** - Modern routing with file-based structure
+- ✅ **TypeScript** - Full type safety throughout
+- ✅ **@rescui Components** - UI components from JetBrains
+- ✅ **Production Ready** - Docker, proper build tools, error handling
 
-### Installation
-
-Install the dependencies:
-
-```bash
-npm install
-```
-
-### Development
-
-Start the development server with HMR:
+## Quick Start
 
 ```bash
-npm run dev
-```
+# Install dependencies
+pnpm install
 
-Your application will be available at `http://localhost:5173`.
+# Development (with HMR)
+pnpm run dev
+# Open http://localhost:5173
 
-## Building for Production
+# Production build
+pnpm run build
 
-Create a production build:
-
-```bash
-npm run build
+# Run production server
+pnpm run start
+# Open http://localhost:3000
 ```
 
 ## Deployment
@@ -49,10 +42,10 @@ npm run build
 To build and run using Docker:
 
 ```bash
-docker build -t my-app .
+docker build -t kotlin-website .
 
 # Run the container
-docker run -p 3000:3000 my-app
+docker run -p 3000:3000 kotlin-website
 ```
 
 The containerized application can be deployed to any platform that supports Docker, including:
@@ -64,24 +57,24 @@ The containerized application can be deployed to any platform that supports Dock
 - Fly.io
 - Railway
 
-### DIY Deployment
-
-If you're familiar with deploying Node applications, the built-in app server is production-ready.
-
-Make sure to deploy the output of `npm run build`
+## Project structure
 
 ```
-├── package.json
-├── package-lock.json (or pnpm-lock.yaml, or bun.lockb)
-├── build/
-│   ├── client/    # Static assets
-│   └── server/    # Server-side code
+app/
+├── assets/                 # Assets for pages
+├── routes/                 # Route definitions
+│   └── home.tsx            # Homepage with loader
+├── components/
+│   ├── home/               # Homepage components
+│   │   ├── header-section/
+│   │   ├── why-kotlin-section/
+│   │   ├── usage-section/
+│   │   └── ...
+│   └── layout/             # Header, Footer
+├── styles/                 # SCSS
+└── root.tsx                # Root layout
+
+public/
+├── images/                 # Static images
+└── favicon.svg
 ```
-
-## Styling
-
-This template comes with [Tailwind CSS](https://tailwindcss.com/) already configured for a simple default starting experience. You can use whatever CSS framework you prefer.
-
----
-
-Built with ❤️ using React Router.
