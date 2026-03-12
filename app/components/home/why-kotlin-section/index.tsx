@@ -74,14 +74,14 @@ function YouTubeEmbed({ id }: { id: string }) {
   );
 }
 
-function WhyKotlinContent() {
+function WhyKotlinContent({ tabIndex }: { tabIndex: number }) {
   const textCn = useTextStyles();
   return (
     <Section className="why-kotlin-section">
       <Container>
         <h2 className={textCn('rs-hero')}>Why Kotlin</h2>
 
-        <ProgrammingLanguage />
+        <ProgrammingLanguage tabIndex={tabIndex} />
 
         {sections.map((section, index) => (
           <div
@@ -120,10 +120,10 @@ function WhyKotlinContent() {
   );
 }
 
-export function WhyKotlinSection() {
+export function WhyKotlinSection({ tabIndex }: { tabIndex: number }) {
   return (
     <ThemeProvider theme="light">
-      <WhyKotlinContent />
+      <WhyKotlinContent tabIndex={tabIndex} />
     </ThemeProvider>
   );
 }

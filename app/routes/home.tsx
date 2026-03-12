@@ -13,6 +13,13 @@ import '~/components/home/index.scss';
 import '~/styles/grid.scss';
 import Header from '~/components/layout/header';
 import Footer from '~/components/layout/footer';
+import { getRandomTabIndex } from '~/components/home/why-kotlin-section/programming-language/index';
+
+export const loader = async (): Promise<{ randomTabIndex: number }> => {
+  return {
+    randomTabIndex: getRandomTabIndex(),
+  };
+};
 
 export const meta: Route.MetaFunction = () => {
   const baseUrl = 'https://kotlinlang.org';
@@ -48,24 +55,24 @@ export const meta: Route.MetaFunction = () => {
   ];
 };
 
-function OverviewPageContent() {
+function OverviewPageContent({ randomTabIndex }: { randomTabIndex: number }) {
   return (
     <div className="overview-page">
       <HeaderSection />
       <LatestFromKotlinSection />
-      <WhyKotlinSection />
+      <WhyKotlinSection tabIndex={randomTabIndex} />
       <UsageSection />
       <StartSection />
     </div>
   );
 }
 
-export default function Home() {
+export default function Home({ loaderData }: Route.ComponentProps) {
   return (
     <>
       <Header dropdownTheme="dark" />
       <ThemeProvider theme="dark">
-        <OverviewPageContent />
+        <OverviewPageContent randomTabIndex={loaderData.randomTabIndex} />
       </ThemeProvider>
 
       <Footer />

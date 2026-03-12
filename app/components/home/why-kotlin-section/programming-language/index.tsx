@@ -13,14 +13,15 @@ import './index.scss';
 
 hljs.registerLanguage('kotlin', kotlin);
 
-export function ProgrammingLanguage() {
-  const textCn = useTextStyles();
-  const [activeIndex, setActiveIndex] = useState(0);
+export const getRandomTabIndex = () => Math.floor(Math.random() * tabs.length);
 
-  useEffect(() => {
-    // eslint-disable-next-line
-    setActiveIndex(Math.floor(Math.random() * tabs.length));
-  }, []);
+type ProgrammingLanguageProps = {
+  tabIndex: number;
+};
+
+export function ProgrammingLanguage({ tabIndex }: ProgrammingLanguageProps) {
+  const textCn = useTextStyles();
+  const [activeIndex, setActiveIndex] = useState(tabIndex);
 
   const activeCode = tabs[activeIndex]?.code || '';
   const highlighted = hljs.highlight(activeCode, { language: 'kotlin' }).value;
