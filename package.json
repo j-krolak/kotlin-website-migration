@@ -31,7 +31,7 @@
     "body-scroll-lock": "4.0.0-beta.0",
     "classnames": "^2.5.1",
     "formik": "2.2.9",
-    "highlight.js": "^11.11.1",
+    "highlight.js": "10.5.0",
     "isbot": "^5",
     "kotlin-playground": "^1.27.0",
     "react": "18.3.1",

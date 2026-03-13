@@ -24,7 +24,7 @@ export function ProgrammingLanguage({ tabIndex }: ProgrammingLanguageProps) {
   const [activeIndex, setActiveIndex] = useState(tabIndex);
 
   const activeCode = tabs[activeIndex]?.code || '';
-  const highlighted = hljs.highlight(activeCode, { language: 'kotlin' }).value;
+  const highlighted = hljs.highlight('kotlin', activeCode).value;
 
   return (
     <div
