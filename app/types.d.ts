@@ -21,3 +21,11 @@ declare module '@jetbrains/kotlin-web-site-ui/dist/header.js' {
 
 declare module '@jetbrains/kotlin-web-site-ui';
 declare module '@rescui/*';
+declare module 'highlight.js/lib/core' {
+  export default any;
+}
+
+declare module 'highlight.js/lib/languages/kotlin' {
+  const kotlin: any;
+  export default kotlin;
+}

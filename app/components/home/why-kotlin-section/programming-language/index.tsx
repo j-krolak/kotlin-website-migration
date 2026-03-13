@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useMemo, useState } from 'react';
 import Button from '@rescui/button';
 import { useTextStyles } from '@rescui/typography';
 import { TabList, Tab, TabSeparator } from '@rescui/tab-list';
@@ -24,7 +24,14 @@ export function ProgrammingLanguage({ tabIndex }: ProgrammingLanguageProps) {
   const [activeIndex, setActiveIndex] = useState(tabIndex);
 
   const activeCode = tabs[activeIndex]?.code || '';
-  const highlighted = hljs.highlight('kotlin', activeCode).value;
+  const highlighted = useMemo(() => {
+    try {
+      return hljs.highlight('kotlin', activeCode).value;
+    } catch (error) {
+      console.error('Error highlighting code:', error);
+      return activeCode;
+    }
+  }, [activeCode]);
 
   return (
     <div
