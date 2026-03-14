@@ -1,7 +1,7 @@
 export const tabs = [
-    {
-        title: 'Concise',
-        code: `data class Employee(
+  {
+    title: 'Concise',
+    code: `data class Employee(
    val name: String,
    val email: String,
    val company: String
@@ -16,10 +16,10 @@ fun main() {                                      // Function at the top level
       "alice@mycompany.com", MyCompany.name)
    println(employee)
 }`,
-    },
-    {
-        title: 'Safe',
-        code: `fun reply(condition: Boolean): String? =          // Nullability is part of Kotlin's type system
+  },
+  {
+    title: 'Safe',
+    code: `fun reply(condition: Boolean): String? =          // Nullability is part of Kotlin's type system
    if (condition) "I'm fine" else null
 
 fun error(): Nothing =                            // Always throw an exception
@@ -38,10 +38,10 @@ fun main() {
    reply(condition = true) ?: error()             // Kotlin can infer that the result is non-null
    println(nonNull)
 }`,
-    },
-    {
-        title: 'Expressive',
-        code: `fun main() {
+  },
+  {
+    title: 'Expressive',
+    code: `fun main() {
    val map = mapOf(1 to "one", 2 to "two")
    for ((k, v) in map) {                            // Traverse a map or a list of pairs
        println("$k -> $v")
@@ -69,10 +69,10 @@ fun main() {
        ?.takeIf { it.status == Status.FIXED }       // Use the value only if the condition is true
    println(fixedIssue)
 }`,
-    },
-    {
-        title: 'Interoperable',
-        code: `// Use any existing JVM library or framework
+  },
+  {
+    title: 'Interoperable',
+    code: `// Use any existing JVM library or framework
 // Call Kotlin code from Java without an issue
 
 @SpringBootApplication
@@ -93,10 +93,10 @@ class MessageResource {
 }
 
 data class Message(val id: String?, val text: String)`,
-    },
-    {
-        title: 'Multiplatform',
-        code: `// Common
+  },
+  {
+    title: 'Multiplatform',
+    code: `// Common
 // Declare signatures to use them in the common code
 // Provide platform-specific implementations in the platform modules
 expect fun randomUUID(): String
@@ -115,5 +115,5 @@ interface PlatformSocketListener {
     fun onMessage(msg: String)
     fun onClosing(code: Int, reason: String)
 }`,
-    },
+  },
 ];

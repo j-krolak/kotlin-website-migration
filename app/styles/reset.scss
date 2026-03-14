@@ -1,4 +1,4 @@
-@use "util/adaptive";
+@use 'util/adaptive';
 
 /*! normalize.styles 2012-03-11T12:53 UTC - http://github.com/necolas/normalize.css */
 
@@ -39,7 +39,6 @@ textarea {
   font-family: sans-serif;
 }
 
-
 /* =============================================================================
    Links
    ========================================================================== */
@@ -60,7 +59,6 @@ a:hover,
 a:active {
   outline: 0;
 }
-
 
 /* =============================================================================
    Typography
@@ -111,7 +109,8 @@ dfn {
   font-style: normal;
 }
 
-abbr, acronym {
+abbr,
+acronym {
   border: 0;
 }
 
@@ -170,7 +169,6 @@ sub {
   bottom: -0.25em;
 }
 
-
 /* =============================================================================
    Lists
    ========================================================================== */
@@ -193,7 +191,6 @@ ol {
   list-style: none;
 }
 
-
 /* =============================================================================
    Embedded content
    ========================================================================== */
@@ -208,7 +205,6 @@ img {
   border: 0;
   -ms-interpolation-mode: bicubic; /* 2 */
 }
-
 
 /* =============================================================================
    Figures
@@ -225,7 +221,6 @@ figure {
 address {
   font-style: normal;
 }
-
 
 /* =============================================================================
    Tables
@@ -246,7 +241,6 @@ td {
 caption {
   margin: 0;
 }
-
 
 /* =============================================================================
    Forms
@@ -307,8 +301,8 @@ input {
  * 3. Removes excess padding in IE7
       Known issue: excess padding remains in IE6
  */
-input[type="checkbox"],
-input[type="radio"] {
+input[type='checkbox'],
+input[type='radio'] {
   box-sizing: border-box; /* 1 */
   padding: 0; /* 2 */
 }

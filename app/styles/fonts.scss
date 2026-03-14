@@ -1,8 +1,8 @@
-@use "sass:meta";
+@use 'sass:meta';
 @use 'config/_font';
 
 // Sans Serif
-@import url('//fonts.googleapis.com/css?family=Open+Sans:300,300italic,400italic,700italic,400,700');
+@import url('//fonts.googleapis.com/css?family=Open+Sans:300,300italic,400italic,700italic,400,700&display=swap');
 
 // Mono
 @import url('//fonts.googleapis.com/css?family=Droid+Sans+Mono');
@@ -11,14 +11,17 @@
 @font-face {
   font-family: 'GraublauSans Bold';
   src: url('/app/assets/fonts/GraublauSans-Bold-webfont.woff');
+  font-display: swap;
 }
 @font-face {
   font-family: 'GraublauSlab Regular';
   src: url('/app/assets/fonts/GraublauSlab-Regular-webfont.woff');
+  font-display: swap;
 }
 @font-face {
   font-family: 'GraublauSlab Semibold';
   src: url('/app/assets/fonts/GraublauSlab-Semibold.woff');
+  font-display: swap;
 }
 
 @include meta.load-css('fonts/jetbrains-mono');

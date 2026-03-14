@@ -63,6 +63,7 @@ function YouTubeEmbed({ id }: { id: string }) {
   return (
     <div className="why-kotlin-section__youtube">
       <iframe
+        title="Youtube video player"
         width="560"
         height="315"
         frameBorder="0"

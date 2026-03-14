@@ -2,7 +2,7 @@
   background-color: #fff;
   box-sizing: border-box;
   padding-bottom: 96px;
-  padding-top: 1px
+  padding-top: 1px;
 }
 
 .kto-layout-container {
@@ -12,14 +12,14 @@
   max-width: 1276px;
   padding-left: 22px;
   padding-right: 22px;
-  width: 100%
+  width: 100%;
 }
 
 @media screen and (max-width: 1276px) {
   .kto-layout-container {
     max-width: 996px;
     padding-left: 22px;
-    padding-right: 22px
+    padding-right: 22px;
   }
 }
 
@@ -27,7 +27,7 @@
   .kto-layout-container {
     max-width: 100%;
     padding-left: 22px;
-    padding-right: 22px
+    padding-right: 22px;
   }
 }
 
@@ -35,6 +35,6 @@
   .kto-layout-container {
     max-width: 100%;
     padding-left: 16px;
-    padding-right: 16px
+    padding-right: 16px;
   }
 }

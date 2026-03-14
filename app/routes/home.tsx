@@ -57,13 +57,13 @@ export const meta: Route.MetaFunction = () => {
 
 function OverviewPageContent({ randomTabIndex }: { randomTabIndex: number }) {
   return (
-    <div className="overview-page">
+    <main className="overview-page">
       <HeaderSection />
       <LatestFromKotlinSection />
       <WhyKotlinSection tabIndex={randomTabIndex} />
       <UsageSection />
       <StartSection />
-    </div>
+    </main>
   );
 }
 

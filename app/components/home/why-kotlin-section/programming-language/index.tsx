@@ -53,12 +53,14 @@ export function ProgrammingLanguage({ tabIndex }: ProgrammingLanguageProps) {
       </div>
 
       <div className="kto-col-8 kto-col-md-12">
-        <TabList value={activeIndex} onChange={(v) => setActiveIndex(v)}>
-          {tabs.map((tab, i) => (
-            <Tab key={i}>{tab.title}</Tab>
-          ))}
-        </TabList>
-        <TabSeparator />
+        <div role="tablist">
+          <TabList value={activeIndex} onChange={(v) => setActiveIndex(v)}>
+            {tabs.map((tab, i) => (
+              <Tab key={i}>{tab.title}</Tab>
+            ))}
+          </TabList>
+          <TabSeparator />
+        </div>
         <pre className="programming-language__code kto-offset-top-16">
           <code
             className="hljs"
