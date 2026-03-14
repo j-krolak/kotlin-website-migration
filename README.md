@@ -17,6 +17,16 @@ visual accuracy and all interactive functionality.
 - ✅ **@rescui Components** - UI components from JetBrains
 - ✅ **Production Ready** - Docker, proper build tools, error handling
 
+### SEO, A11y and performance
+
+Chrome Lighthouse — before vs after optimizations:
+
+|        Metric | Before | After |
+| ------------: | :----: | :---: |
+|   Performance |   83   |  99   |
+| Accessibility |   84   |  93   |
+|           SEO |   82   |  91   |
+
 ## Quick Start
 
 ```bash
@@ -37,16 +47,23 @@ pnpm run start
 
 ## Deployment
 
-### Docker Deployment
+### Docker Compose
 
-To build and run using Docker:
+To build and run using Docker Compose:
 
 ```bash
-docker build -t kotlin-website .
-
-# Run the container
-docker run -p 3000:3000 kotlin-website
+docker-compose up -d
 ```
+
+The application will be available at `http://localhost:3000`
+
+To stop the application:
+
+```bash
+docker-compose down
+```
+
+### Docker Deployment
 
 The containerized application can be deployed to any platform that supports Docker, including:
 
