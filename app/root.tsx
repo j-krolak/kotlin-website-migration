@@ -100,11 +100,18 @@ export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {
   }
 
   return (
-    <main className="pt-16 p-4 container mx-auto">
+    <main
+      style={{
+        padding: '2rem',
+        textAlign: 'center',
+        marginRight: 'auto',
+        marginLeft: 'auto',
+      }}
+    >
       <h1>{message}</h1>
       <p>{details}</p>
       {stack && (
-        <pre className="w-full p-4 overflow-x-auto">
+        <pre style={{ width: 'full', padding: '16px' }}>
           <code>{stack}</code>
         </pre>
       )}

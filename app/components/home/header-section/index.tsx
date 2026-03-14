@@ -41,7 +41,7 @@ export function HeaderSection() {
             </div>
 
             <div className="header-section__contributors">
-              <img src={jetbrainsLogo} alt=""></img>
+              <img src={jetbrainsLogo} alt="JetBrains Logo"></img>
               <p className={textCn('rs-text-2')}>
                 Developed by{' '}
                 <a
@@ -75,7 +75,7 @@ export function HeaderSection() {
                   'kto-col-3 kto-col-md-6 kto-col-sm-12'
                 )}
               >
-                <img src={card.img} alt=""></img>
+                <img src={card.img} alt={card.title}></img>
                 <h2 className={cn(textCn('rs-h3'), 'kto-offset-top-16')}>
                   {card.title}
                 </h2>
