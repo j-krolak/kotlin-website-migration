@@ -19,7 +19,7 @@ visual accuracy and all interactive functionality.
 
 ### SEO, A11y and performance
 
-Chrome Lighthouse — before vs after optimizations:
+Chrome Lighthouse - before vs after optimizations:
 
 |        Metric | Before | After |
 | ------------: | :----: | :---: |
