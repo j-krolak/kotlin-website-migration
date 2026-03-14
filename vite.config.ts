@@ -21,9 +21,4 @@ export default defineConfig({
   ssr: {
     noExternal: ['@rescui/*'],
   },
-  server: {
-    headers: {
-      'Cache-Control': 'public, max-age=31536000, immutable', // 1 year for assets with hash
-    },
-  },
 });
