@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect} from 'react';
 import Button from '@rescui/button';
 import { useTextStyles } from '@rescui/typography';
 import { cardCn } from '@rescui/card';
@@ -13,14 +13,13 @@ import './index.scss';
 
 function UsageSectionContent() {
   const textCn = useTextStyles();
+  const [sortByName, setSortByName] = useState(false);
 
-  const [sortByName, setSortByName] = useState(() => {
-    if (typeof window === 'undefined') {
-      return false;
-    }
+  useEffect(() => {
     const savedOrder = localStorage.getItem('kotlin-testimonials-order');
-    return savedOrder === 'name';
-  });
+    // eslint-disable-next-line
+    setSortByName(savedOrder === 'name');
+  }, []);
 
   const sortedTestimonials = sortByName
     ? [...testimonials].sort((a, b) => a.company.localeCompare(b.company))
